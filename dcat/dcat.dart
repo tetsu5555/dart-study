@@ -5,6 +5,7 @@ import 'package:args/args.dart';
 const lineNumber = 'line-number';
 
 void main(List<String> arguments) {
+  // dart:io libraryがexitCodeというtop-level propertyを定義する
   exitCode = 0;
 
   // ArgParserはarg libraryが提供する、コマンドライン引数をパースするparser
@@ -31,13 +32,13 @@ Future dcat(List<String> paths, bool showLineNumbers) async {
     for (var path in paths) {
       var lineNumber = 1;
       // ここよくわからん
-      final lines = utf8.decoder
+      final lines = utf8.decoder // UTF8 decoderはdataをDart stringに変換する
         .bind(File(path).openRead()) // openReadメソッドでファイルを開く、このメソッドはstreamを返す
-        .transform(const LineSplitter());
+        .transform(const LineSplitter()); // newlineでdataを分割する
 
       try {
         // ファイルじゃない場合ここで例外が発生する？なんでだろう？
-        await for (var line in lines) {
+        await for (var line in lines) { // await forでファイルが非同期で読み込まれるのを待つ
           if (showLineNumbers) {
             stdout.write('${lineNumber++} ');
           }
