@@ -1,0 +1,13 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "my_app",
+      "rootUri": "../",
+      "packageUri": "lib/"
+    }
+  ],
+  "generated": "2020-06-24T14:40:58.697706Z",
+  "generator": "pub",
+  "generatorVersion": "2.8.4"
+}
