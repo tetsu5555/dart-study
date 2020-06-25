@@ -1,0 +1,4 @@
+name: test_study
+dev_dependencies:
+  test: '1.5.1'
+  
