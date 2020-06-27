@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
 
-import './pages/words_list.dart';
+import './screens/slack_message_list.dart';
 
 void main() => runApp(MyApp());
 
+/// This Widget is the main application widget.
 class MyApp extends StatelessWidget {
+  static const String _title = 'これはSlackです';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Startup Name Generator',
-       theme: ThemeData(
+      title: _title,
+      theme: ThemeData(
         primaryColor: Colors.white,
       ),
-      home: RandomWords(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(_title),
+        ),
+        body: SlackMessageListScreen(),
+      ),
     );
   }
 }
