@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'package:startup_namer/components/utils.dart';
+
+// これだとエラーになる。何でだろう？
+// import '../components/utils.dart';
+
 class _SlackMessageItem extends StatelessWidget {
   final String text;
   final String author;
@@ -18,7 +23,7 @@ class _SlackMessageItem extends StatelessWidget {
             flex: 1,
             child: Image.network('$image'),
           ),
-          SizedBox(width: 8),
+          SpaceHorizontal(size: 8),
           Expanded(
             flex: 6,
             child: Column(
@@ -31,9 +36,9 @@ class _SlackMessageItem extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 8),
+                SpaceVertical(size: 8),
                 Text('$text'),
-                SizedBox(height: 8),
+                SpaceVertical(size: 8),
                 Row(
                   children: <Widget>[
                     Image.network(
@@ -41,7 +46,7 @@ class _SlackMessageItem extends StatelessWidget {
                       height: 20,
                       width: 20,
                     ),
-                    SizedBox(width: 8),
+                    SpaceHorizontal(size: 8),
                     Text("コメントを開く")
                   ]
                 )
