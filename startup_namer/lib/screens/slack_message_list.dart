@@ -46,8 +46,8 @@ class _SlackMessageItem extends StatelessWidget {
                       padding: const EdgeInsets.fromLTRB(0, 0, 8.0, 0),
                       child: Image.network(
                         '$image',
-                        height: 24,
-                        width: 24,
+                        height: 20,
+                        width: 20,
                       ),
                     ),
                     Text("コメントを開く")
@@ -62,10 +62,8 @@ class _SlackMessageItem extends StatelessWidget {
   }
 }
 
-class SlackMessageListScreen extends StatelessWidget {
-  SlackMessageListScreen({Key key}) : super(key: key);
-
-  static const String _title = 'これはSlackです';
+class SlackMessageList extends StatelessWidget {
+  SlackMessageList({Key key}) : super(key: key);
 
   final items = [
     _SlackMessageItem(
@@ -87,14 +85,29 @@ class SlackMessageListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return new Container(
+      color: Colors.white,
+      child: ListView(
+        padding: const EdgeInsets.all(10.0),
+        children: items,
+      ),
+    );
+  }
+}
+
+class SlackMessageListScreen extends StatelessWidget {
+  SlackMessageListScreen({Key key}) : super(key: key);
+
+  static const String _title = 'これはSlackです';
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text(_title),
+          elevation: 0,
         ),
-        body: ListView(
-          padding: const EdgeInsets.all(10.0),
-          children: items,
-        )
+        body: SlackMessageList(),
       );
   }
 }
