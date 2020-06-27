@@ -9,7 +9,7 @@ class _SlackMessageItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.fromLTRB(8.0, 10.0, 8.0, 10.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,7 +62,6 @@ class _SlackMessageItem extends StatelessWidget {
   }
 }
 
-/// This is the stateless widget that the main application instantiates.
 class SlackMessageListScreen extends StatelessWidget {
   SlackMessageListScreen({Key key}) : super(key: key);
 
