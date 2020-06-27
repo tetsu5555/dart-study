@@ -105,7 +105,7 @@ class SlackMessageListScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text(_title),
-          elevation: 0,
+          elevation: 0.8,
         ),
         body: SlackMessageList(),
       );
