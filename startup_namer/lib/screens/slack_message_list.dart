@@ -65,6 +65,8 @@ class _SlackMessageItem extends StatelessWidget {
 class SlackMessageListScreen extends StatelessWidget {
   SlackMessageListScreen({Key key}) : super(key: key);
 
+  static const String _title = 'これはSlackです';
+
   final items = [
     _SlackMessageItem(
       author: "tetsuo.yamamoto",
@@ -85,9 +87,14 @@ class SlackMessageListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(10.0),
-      children: items,
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text(_title),
+        ),
+        body: ListView(
+          padding: const EdgeInsets.all(10.0),
+          children: items,
+        )
+      );
   }
 }
