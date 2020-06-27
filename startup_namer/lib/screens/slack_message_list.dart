@@ -16,40 +16,32 @@ class _SlackMessageItem extends StatelessWidget {
         children: [
           Expanded(
             flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 0, 8.0, 0),
-              child: Image.network('$image'),
-            )
+            child: Image.network('$image'),
           ),
+          SizedBox(width: 8),
           Expanded(
             flex: 6,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  child: Text(
-                    '$author',
-                    style: const TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.bold,
-                    ),
+                Text(
+                  '$author',
+                  style: const TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
                   ),
-                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 8.0),
                 ),
-                Padding(
-                  child: Text('$text'),
-                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 8.0),
-                ),
+                SizedBox(height: 8),
+                Text('$text'),
+                SizedBox(height: 8),
                 Row(
                   children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 8.0, 0),
-                      child: Image.network(
-                        '$image',
-                        height: 20,
-                        width: 20,
-                      ),
+                    Image.network(
+                      '$image',
+                      height: 20,
+                      width: 20,
                     ),
+                    SizedBox(width: 8),
                     Text("コメントを開く")
                   ]
                 )
